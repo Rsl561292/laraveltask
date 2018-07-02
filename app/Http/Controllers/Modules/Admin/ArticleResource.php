@@ -26,7 +26,7 @@ class ArticleResource extends Controller
             'user'
         ])
             ->orderBy('updated_at', 'desc')
-            ->get();
+            ->paginate(5);
 
         return view('modules/admin/article/index', [
             'articles' => $articles,

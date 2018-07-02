@@ -22,23 +22,27 @@
                 </div>
             </div>
             <div class="col-md-9">
-                @forelse($articles as $article)
-                    <div class="blog-article">
-                        <a class="title-article" href="{{ route('site.article', ['id' => $article['id']]) }}">{{ $article['title'] }}</a>
-                        <div class="list-meta-data">
-                            <p class="meta-data">{{ date('F d, Y', strtotime($article['published_at'])) }} by <a href="#">{{ $article['user']['name'] }}</a></p>
-                        </div>
+                @if(!empty($articles))
+                    @foreach($articles as $article)
+                        <div class="blog-article">
+                            <a class="title-article" href="{{ route('site.article', ['id' => $article['id']]) }}">{{ $article['title'] }}</a>
+                            <div class="list-meta-data">
+                                <p class="meta-data">{{ date('F d, Y', strtotime($article['published_at'])) }} by <a href="#">{{ $article['user']['name'] }}</a></p>
+                            </div>
 
-                        <div class="content-article">{{ substr($article['content'], 0, 700) }}...</div>
+                            <div class="content-article">{{ substr($article['content'], 0, 700) }}...</div>
 
-                        <div class="article-footer">
-                            <p class="meta-data div-left">Category: <a href="{{ route('site.articles.category', ['category_slug' => $article['category']['slug']]) }}">{{ $article['category']['name'] }}</a></p>
-                            <a class="btn-read-more-article div-right" href="{{ route('site.article', ['id' => $article['id']]) }}">read more</a>
+                            <div class="article-footer">
+                                <p class="meta-data div-left">Category: <a href="{{ route('site.articles.category', ['category_slug' => $article['category']['slug']]) }}">{{ $article['category']['name'] }}</a></p>
+                                <a class="btn-read-more-article div-right" href="{{ route('site.article', ['id' => $article['id']]) }}">read more</a>
+                            </div>
                         </div>
-                    </div>
-                @empty
+                    @endforeach
+
+                    {{ $articles->links() }}
+                @else
                     <center><h4>Articles not found!</h4></center>
-                @endforelse
+                @endif
             </div>
         </div>
     @endsection
