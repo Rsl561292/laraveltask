@@ -1,0 +1,15 @@
+header{
+    width: 100%;
+    z-index: 999999;
+}
+.navbar-top.affix {
+    width: 100%;
+    top: 0;
+    z-index: 9999999;
+}
+.affix {
+    position: fixed;
+}
+#app .py-4 .container{
+    margin-top: 70px;
+}

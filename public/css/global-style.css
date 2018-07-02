@@ -1,0 +1,43 @@
+.div-left{
+    display: block;
+    float: left;
+}
+.div-right{
+    display: block;
+    float: right;
+}
+
+.blog-article{
+    overflow: hidden;
+    border-bottom: 1px solid #666;
+    margin-bottom: 15px;
+}
+.blog-article .title-article{
+    margin-bottom: 3px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    color: #444;
+}
+.blog-article .title-article:hover{
+    text-decoration: none;
+}
+.blog-article .list-meta-data{
+    font-size: 16px;
+    overflow: hidden;
+}
+.blog-article .list-meta-data .meta-data .parameter{
+     font-weight: bold;
+ }
+.blog-article .content-article{
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+
+
+.blog-article .article-footer{
+    padding: 6px 3px 2px 3px;
+    margin-bottom: 3px;
+    font-size: 14px;
+}
