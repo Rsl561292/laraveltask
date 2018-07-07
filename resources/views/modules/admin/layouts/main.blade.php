@@ -114,8 +114,8 @@
                     }
                 @endphp
 
-                @if(!empty($flashMessages))
-                    @if($flashMessages['type'] == 'success')
+                @if(!empty($flashMessages) && isset($flashMessages['message']))
+                    @if(isset($flashMessages['type']) && $flashMessages['type'] == 'success')
                         <div class="alert alert-success alert-dismissible">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                             <h4>Message about success!</h4>

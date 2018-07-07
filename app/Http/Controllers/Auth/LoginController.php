@@ -78,7 +78,7 @@ class LoginController extends Controller
             ], $request->has('remember'));
 
             if($sign) {
-                return redirect()->route('site.home');
+                return redirect()->intended('/admin');
             }
 
             return redirect()->back()

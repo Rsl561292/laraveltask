@@ -28,4 +28,11 @@ class LoginFormRequest extends FormRequest
             'password' => 'required|string',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'email.exists' => 'Enter data for authentication not right. Try again.',
+        ];
+    }
 }
